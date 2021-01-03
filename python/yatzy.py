@@ -22,78 +22,33 @@ class Yatzy:
         return 0
     
     @staticmethod
-    def ones( d1,  d2,  d3,  d4,  d5):
-        sum = 0
-        if (d1 == 1):
-            sum += 1
-        if (d2 == 1):
-            sum += 1
-        if (d3 == 1):
-            sum += 1
-        if (d4 == 1):
-            sum += 1
-        if (d5 == 1): 
-            sum += 1
-
-        return sum
+    def ones(*dice):
+        one = 1
+        return dice.count(one) * 1  #CUENTA LAS VECES QUE SE REPITE UN NÚMERO Y LO MULTIPLICA POR SU VALOR
     
 
     @staticmethod
-    def twos( d1,  d2,  d3,  d4,  d5):
-        sum = 0
-        if (d1 == 2):
-             sum += 2
-        if (d2 == 2):
-             sum += 2
-        if (d3 == 2):
-             sum += 2
-        if (d4 == 2):
-             sum += 2
-        if (d5 == 2):
-             sum += 2
-        return sum
-    
-    @staticmethod
-    def threes( d1,  d2,  d3,  d4,  d5):
-        s = 0
-        if (d1 == 3):
-             s += 3
-        if (d2 == 3):
-             s += 3
-        if (d3 == 3):
-             s += 3
-        if (d4 == 3):
-             s += 3
-        if (d5 == 3):
-             s += 3
-        return s
-    
+    def twos(*dice):
+        two = 2
+        return dice.count(two) * 2
 
-    
-    
-    def fours(self):
-        sum = 0
-        for at in range(5):
-            if (self.dice[at] == 4): 
-                sum += 4
-        return sum
-    
+    @staticmethod
+    def threes(*dice):
+        three = 3
+        return dice.count(three) * 3
+
+    def fours(self):        ###NO ENTIENDO PORQUE HAY QUE PONER SELF// Y SI LE PONGO *DICE ASSERT ERROR
+        four = 4
+        return self.dice.count(four) * 4
 
     def fives(self):
-        s = 0
-        i = 0
-        for i in range(len(self.dice)): 
-            if (self.dice[i] == 5):
-                s = s + 5
-        return s
+        five = 5
+        return self.dice.count(five) * 5
     
 
     def sixes(self):
-        sum = 0
-        for at in range(len(self.dice)): 
-            if (self.dice[at] == 6):
-                sum = sum + 6
-        return sum
+        six = 6
+        return self.dice.count(six) * 6
     
     @staticmethod
     def score_pair( d1,  d2,  d3,  d4,  d5):
